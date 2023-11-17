@@ -1,0 +1,52 @@
+import java.util.*;
+public class CensoredClass {
+    public HashMap<String,String> censorshipMap=new HashMap<>();
+    public CensoredClass(){
+        censorshipMap.put("lol", "***");
+        censorshipMap.put("omg", "***");
+        censorshipMap.put("gonna", "*****");
+        censorshipMap.put("wanna", "*****");
+        censorshipMap.put("awesome", "*******");
+        censorshipMap.put("sick", "****");
+        censorshipMap.put("chill", "****");
+        censorshipMap.put("yolo", "****");
+        censorshipMap.put("selfie", "******");
+        censorshipMap.put("bae", "***");
+        censorshipMap.put("lit", "***");
+        censorshipMap.put("haha", "****");
+        censorshipMap.put("lmao", "****");
+        censorshipMap.put("rofl", "****");
+        censorshipMap.put("brb", "***");
+        censorshipMap.put("ttyl", "****");
+        censorshipMap.put("thx", "***");
+        censorshipMap.put("smh", "***");
+        censorshipMap.put("btw", "***");
+        censorshipMap.put("tbh", "***");
+        censorshipMap.put("idk", "***");
+        censorshipMap.put("fyi", "***");
+        censorshipMap.put("bff", "***");
+        censorshipMap.put("fomo", "****");
+        censorshipMap.put("fwiw", "****");
+        censorshipMap.put("gtg", "***");
+        censorshipMap.put("icymi", "*****");
+        censorshipMap.put("jk", "**");
+        censorshipMap.put("meh", "***");
+        censorshipMap.put("np", "**");
+        censorshipMap.put("ppl", "***");
+        censorshipMap.put("rip", "***");
+        censorshipMap.put("smh", "***");
+        censorshipMap.put("tmi", "***");
+        censorshipMap.put("tbt", "***");
+        censorshipMap.put("imho", "****");
+        censorshipMap.put("nvm", "****");
+        censorshipMap.put("omw", "***");
+        censorshipMap.put("af", "**");
+        censorshipMap.put("fml", "***");
+        censorshipMap.put("tfw", "***");
+        censorshipMap.put("wyd", "***");
+        censorshipMap.put("hbu", "***");
+        censorshipMap.put("nsfw", "****");
+        censorshipMap.put("ootd", "****");
+        censorshipMap.put("smexy", "*****");
+    }
+}

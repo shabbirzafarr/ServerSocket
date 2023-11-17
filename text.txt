@@ -1,0 +1,54 @@
+String uniqueID = parts[0];
+                        String message = parts[1];
+                        int number = Integer.parseInt(parts[parts.length-1]);
+                        System.out.println("Received unique ID: " + uniqueID);
+                        System.out.println("Received message: " + message);
+                        System.out.println("Received number: " + number);
+                        String[] arr=parts[1].split(" ");
+                        if(parts.length>3){
+                            
+                            for(int i=2;i<parts.length-1;i++)
+                            {
+                                replace(arr,parts[i],parts[i+1]);
+                                i++;
+                            }
+                        }
+                        MyClass obj= new MyClass();
+                        censored(arr,obj);
+                        message = arrayToStringWithSpace(arr);
+                        File file = new File(uniqueID + ".txt");
+                        String fileName=uniqueID + ".txt";
+                        
+                        System.out.println("Message send:"+message);
+                        String result="Message send successfully!";
+                        // Check if a message needs to be forwarded to another client
+                        if (number > 0) {
+                            String recipientID = Integer.toString(number);
+                            // String recipientAddress = clientData.get(recipientID);
+                            
+                            Socket recipientSocket = clientData.get(recipientID);
+                            if (recipientSocket != null) {
+                                
+                                OutputStream output = recipientSocket.getOutputStream();
+                                output.write(("Message from Server: " + message).getBytes());
+                                output.flush();
+                            }
+                            else{
+                                result="User does not Exist!";
+                                System.out.println("Invalid id");
+                            }
+                            try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
+                                // Write content to the file
+                                writer.write(message);
+                                writer.write(" ");
+                                System.out.println("Content written to " + fileName);
+                    
+                            } catch (IOException e) {
+                                // Handle the exception, e.g., file not found or unable to write
+                                e.printStackTrace();
+                            }
+                        }
+
+                        // Send a response back to the client
+                        outputStream.write(result.getBytes("UTF-8"));
+                        outputStream.flush();
